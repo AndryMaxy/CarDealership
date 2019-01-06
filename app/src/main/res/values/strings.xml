@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Car Dealership</string>
+    <string name="producer_params">Марка: %s</string>
+    <string name="producer_name">Марка: </string>
+    <string name="model_params">Модель: %s</string>
+    <string name="model_name">Модель: </string>
+    <string name="price_params">Цена: %d руб.</string>
+    <string name="price">Цена: </string>
+    <string name="body_type">Тип Кузова: </string>
+    <string name="body_type_params">Тип кузова: %s</string>
+    <string name="year_of_issue">Год выпуска: </string>
+    <string name="year_of_issue_params">Год выпуска: %d</string>
+    <string name="power">Мощность двигателя (л.с.): </string>
+    <string name="power_params">Мощность двигателя: %d л.с.</string>
+    <string name="transmission">Коробка передач автомат: </string>
+    <string name="transmission_params">Коробка передач автомат: %s</string>
+    <string name="color">Цвет: </string>
+    <string name="color_params">Цвет: %s</string>
+    <string name="transmission_variant_yes">Да</string>
+    <string name="transmission_variant_no">Нет</string>
+    <string name="apply_edit">Принять</string>
+    <string name="filter">Фильтр: </string>
+    <string name="menu_filter">Фильтр</string>
+    <string name="menu_new_car">Добавить машину</string>
+    <string name="empty_producer">Марка</string>
+    <string name="empty_model">Модель</string>
+    <string name="toast_filter">Сначало выберите марку</string>
+    <string name="sort_by_price">Отсортировать по цене</string>
+    <string name="edit_car">Редактировать</string>
+    <string name="toast_fill">Заполните поле марка, модель и цена.</string>
+</resources>
