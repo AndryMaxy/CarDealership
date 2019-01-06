@@ -1,6 +1,6 @@
 package com.andrydevelops.cardealership.database;
 
-public class CarDataBase {
+class CarDataBase {
 
     public static final class CarTable{
         public static final String NAME = "car_table";

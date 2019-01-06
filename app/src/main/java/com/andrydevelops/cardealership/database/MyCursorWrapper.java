@@ -2,13 +2,11 @@ package com.andrydevelops.cardealership.database;
 
 import android.database.Cursor;
 import android.database.CursorWrapper;
-import android.util.Log;
 
 import com.andrydevelops.cardealership.bean.Car;
 import com.andrydevelops.cardealership.bean.CarBodyType;
 import com.andrydevelops.cardealership.bean.Model;
 import com.andrydevelops.cardealership.bean.Producer;
-import com.andrydevelops.cardealership.fragment.CarListFragment;
 
 public class MyCursorWrapper extends CursorWrapper {
 

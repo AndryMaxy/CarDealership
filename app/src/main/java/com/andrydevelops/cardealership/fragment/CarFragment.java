@@ -23,9 +23,7 @@ import com.squareup.picasso.Picasso;
 
 public class CarFragment extends Fragment {
 
-    private static final int GALLERY_REQUEST = 1;
     private Car mCar;
-    private ImageView mCarImageView;
     private CarCallBack mCarCallBack;
 
 
@@ -58,11 +56,11 @@ public class CarFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_car, container, false);
 
-        mCarImageView = view.findViewById(R.id.carImageButton);
+        ImageView carImageView = view.findViewById(R.id.carImageButton);
         if (mCar.getImageFileName() != null) {
             Picasso.get()
                     .load(Query.getQuery(getActivity()).getImageFile(mCar,getActivity()))
-                    .into(mCarImageView);
+                    .into(carImageView);
         }
 
         TextView producerTextView = view.findViewById(R.id.producerTextView);

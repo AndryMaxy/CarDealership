@@ -92,7 +92,7 @@ public class Query {
         return cars;
     }
 
-    public MyCursorWrapper queryCarByProducerId(int id) {
+    private MyCursorWrapper queryCarByProducerId(int id) {
         return new MyCursorWrapper(mSQLiteDatabase.rawQuery(
                 QUERY_CARS + " " +
                         "where " +

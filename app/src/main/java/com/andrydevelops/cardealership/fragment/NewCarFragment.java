@@ -2,15 +2,10 @@ package com.andrydevelops.cardealership.fragment;
 
 import android.content.Context;
 import android.content.Intent;
-import android.database.Cursor;
-import android.graphics.Bitmap;
-import android.net.Uri;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.content.FileProvider;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -54,7 +49,6 @@ import static android.app.Activity.RESULT_OK;
 
 public class NewCarFragment extends Fragment implements View.OnClickListener {
 
-    protected static final String PROVIDER_AUTHORITY = "com.andrydevelops.cardealership.fileprovider";
     private static final int GALLERY_REQUEST = 1;
     protected ImageView mCarImageView;
     protected List<Producer> mProducers;
@@ -243,23 +237,6 @@ public class NewCarFragment extends Fragment implements View.OnClickListener {
         }
     }
 
-    private void setImage(Intent data){
-        final int chunkSize = 1024;
-        byte[] imageData = new byte[chunkSize];
-        try {
-            try (InputStream in = getActivity().getContentResolver().openInputStream(data.getData());
-                 OutputStream out = new FileOutputStream(mImageFile)) {
-                int bytesRead;
-                while ((bytesRead = in.read(imageData)) > 0) {
-                    out.write(Arrays.copyOfRange(imageData, 0, Math.max(0, bytesRead)));
-                }
-            }
-        } catch (IOException ex) {
-            Log.e("", "Something went wrong.", ex);
-        }
-                Picasso.get().load(mImageFile).into(mCarImageView);
-    }
-
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         super.onCreateOptionsMenu(menu, inflater);
@@ -285,6 +262,9 @@ public class NewCarFragment extends Fragment implements View.OnClickListener {
     }
 
     protected void action(){
+        if (mCar.getColor() == null) {
+            mCar.setColor(getString(R.string.text_empty));
+        }
         int id = Query.getQuery(getActivity()).addCar(mCar);
         mCarCallBack.replaceFragment(CarActivity.FRAGMENT_CAR, id);
     }
@@ -306,5 +286,24 @@ public class NewCarFragment extends Fragment implements View.OnClickListener {
         mModels = new ArrayList<>();
         mModels.add(new Model(0, getString(R.string.empty_model)));
     }
+
+
+    private void setImage(Intent data) {
+        final int chunkSize = 1024;
+        byte[] imageData = new byte[chunkSize];
+        try {
+            try (InputStream in = getActivity().getContentResolver().openInputStream(data.getData());
+                 OutputStream out = new FileOutputStream(mImageFile)) {
+                int bytesRead;
+                while ((bytesRead = in.read(imageData)) > 0) {
+                    out.write(Arrays.copyOfRange(imageData, 0, Math.max(0, bytesRead)));
+                }
+            }
+        } catch (IOException exception) {
+            Log.e("", "Something went wrong.", exception);
+        }
+        Picasso.get().load(mImageFile).into(mCarImageView);
+    }
+
 }
 

@@ -50,7 +50,7 @@ public class CarListFragment extends Fragment {
     private List<Car> mCars;
     private List<Producer> mProducers;
     private List<Model> mModels;
-    boolean mIsSortedDown;
+    private boolean mIsSortedDown;
 
     @Override
     public void onAttach(Context context) {

@@ -9,7 +9,7 @@ import com.andrydevelops.cardealership.bean.CarBodyType;
 
 import static com.andrydevelops.cardealership.database.CarDataBase.*;
 
-public class CarDBHelper extends SQLiteOpenHelper {
+class CarDBHelper extends SQLiteOpenHelper {
 
     private static final int VERSION = 1;
     private static final String DATABASE_NAME = "carDB.db";

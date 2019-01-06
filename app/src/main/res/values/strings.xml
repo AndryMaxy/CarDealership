@@ -20,12 +20,10 @@
     <string name="transmission_variant_no">Нет</string>
     <string name="apply_edit">Принять</string>
     <string name="filter">Фильтр: </string>
-    <string name="menu_filter">Фильтр</string>
-    <string name="menu_new_car">Добавить машину</string>
     <string name="empty_producer">Марка</string>
     <string name="empty_model">Модель</string>
-    <string name="toast_filter">Сначало выберите марку</string>
     <string name="sort_by_price">Отсортировать по цене</string>
     <string name="edit_car">Редактировать</string>
     <string name="toast_fill">Заполните поле марка, модель и цена.</string>
+    <string name="text_empty">Не указано</string>
 </resources>

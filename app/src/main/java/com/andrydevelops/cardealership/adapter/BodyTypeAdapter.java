@@ -7,9 +7,6 @@ import android.widget.ArrayAdapter;
 
 import com.andrydevelops.cardealership.bean.CarBodyType;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class BodyTypeAdapter extends ArrayAdapter<String> {
 
     private CarBodyType[] mBodies;
